@@ -14,3 +14,14 @@ Open Aerospace Library. Unopinionated, open source, and correct utilities for ae
   correctness of the routines.
 - **C++ and Python as first class citizens:** The same algorithms should be
   useable between a trade study script and flight code.
+
+## Non-Goals
+- **DO-178B Certification:** This software is not ready for use in
+  safety-of-life critical applications. Perhaps this will become a goal in the
+  future.
+- **Accepting source code contributions:** While I appreciate enthusiasm to
+  contribute, I wish to remain the sole contributor to the redistributable
+  source of this library as I hope to provide commercial licensing and
+  simplify security auditing in the future. I am more than happy to
+  accept contributions in the form of bug reports, feature requests,
+  improve testing and documentation changes.
