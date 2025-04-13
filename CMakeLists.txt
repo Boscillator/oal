@@ -10,11 +10,9 @@ project(oal
   LANGUAGES CXX
 )
 
-add_library(oal)
-add_library(oal::oal ALIAS oal)
-
 # === Options ===
 option(OAL_BUILD_TESTS "Build tests for OAL" OFF)
+option(OAL_PYTHON "Build python bindings" OFF)
 option(OAL_BUILD_SYMBOL_VISIBILITY_HIDDEN "Hide symbols by default when building shared libraries. You probably shouldn't turn this off." ON)
 
 mark_as_advanced(OAL_BUILD_SYMBOL_VISIBILITY_HIDDEN)
@@ -23,6 +21,16 @@ if(DEFINED OAL_BUILD_SHARED_LIBS)
   set(BUILD_SHARED_LIBS ON)
 endif()
 
+# === Target ===
+if(OAL_PYTHON)
+  set(PYBIND11_FINDPYTHON ON)
+  find_package(pybind11 REQUIRED)
+  pybind11_add_module(oal SHARED)
+else()
+  add_library(oal)
+endif()
+
+add_library(oal::oal ALIAS oal)
 
 # === Symbol Visibility ===
 if(OAL_BUILD_SYMBOL_VISIBILITY_HIDDEN)
@@ -33,6 +41,7 @@ endif()
 include(GenerateExportHeader)
 set(export_file_name "export.h")
 generate_export_header(oal EXPORT_FILE_NAME "include/oal/${export_file_name}")
+
 
 # === Sources ===
 set(public_headers
@@ -46,6 +55,14 @@ set(sources
   src/units.cpp
 )
 
+set(python_sources
+  src/python/core.cpp
+)
+
+if(OAL_PYTHON)
+  list(APPEND sources ${python_sources})
+endif()
+
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${sources})
 
 list(APPEND public_headers "${CMAKE_CURRENT_BINARY_DIR}/include/oal/${export_file_name}")
@@ -56,8 +73,9 @@ list(APPEND sources "${CMAKE_CURRENT_BINARY_DIR}/include/oal/${export_file_name}
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 target_link_libraries(oal PUBLIC Eigen3::Eigen)
 
-# === Target ===
+# === Source ===
 target_sources(oal PRIVATE ${sources})
+
 target_include_directories(oal PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>"

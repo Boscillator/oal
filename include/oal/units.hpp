@@ -11,10 +11,10 @@ enum AngleUnit {
   RADIANS
 };
 
-double to_radians(const double angle_deg);
-double to_radians(const double angle, const AngleUnit units);
-double to_degrees(const double angle_radians);
-double to_degrees(const double angle, const AngleUnit units);
+OAL_EXPORT double to_radians(const double angle_deg);
+OAL_EXPORT double to_radians(const double angle, const AngleUnit units);
+OAL_EXPORT double to_degrees(const double angle_radians);
+OAL_EXPORT double to_degrees(const double angle, const AngleUnit units);
 
 }
 }

@@ -2,7 +2,7 @@
 #define OAL_CORE_HPP_
 
 #include <Eigen/Core>
-
+#include "oal/export.h"
 
 #include <utility>
 // Unreachable macro from https://en.cppreference.com/w/cpp/utility/unreachable
@@ -19,7 +19,7 @@ namespace oal {
   using Vec3 = Eigen::Vector3d;
   using Mat3 = Eigen::Matrix3d;
 
-  void hello();
+  OAL_EXPORT void hello();
 }
 
 #endif

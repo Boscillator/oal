@@ -12,7 +12,8 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "OAL_BUILD_TESTS": "ON"
+        "OAL_BUILD_TESTS": "ON",
+        "OAL_PYTHON": "ON"
       }
     }
   ],
