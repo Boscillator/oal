@@ -1,0 +1,20 @@
+[build-system]
+requires = ["scikit-build-core", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "oal"
+version = "0.0.1"
+dependencies = [
+    "numpy>=2.2.4",
+]
+
+[tool.scikit-build]
+cmake.define = { "OAL_PYTHON" = "ON" }
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6.131.0",
+    "pytest>=8.3.5",
+    "scikit-build-core>=0.11.1",
+]

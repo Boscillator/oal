@@ -96,3 +96,6 @@ if(OAL_BUILD_TESTS)
   include(${CMAKE_CURRENT_LIST_DIR}/cmake/testing.cmake)
   add_subdirectory(tests/cpp)
 endif()
+
+# === Install ===
+install(TARGETS oal DESTINATION .)
