@@ -2,6 +2,9 @@
 build/
 CMakeUserPresets.json
 
+# IDE Files
+.vscode/
+
 # Prerequisites
 *.d
 
