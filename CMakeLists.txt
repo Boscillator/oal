@@ -49,6 +49,11 @@ source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${sources})
 list(APPEND public_headers "${CMAKE_CURRENT_BINARY_DIR}/include/oal/${export_file_name}")
 list(APPEND sources "${CMAKE_CURRENT_BINARY_DIR}/include/oal/${export_file_name}")
 
+
+# === Dependencies ===
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)
+target_link_libraries(oal PUBLIC Eigen3::Eigen)
+
 # === Target ===
 target_sources(oal PRIVATE ${sources})
 target_include_directories(oal PUBLIC
