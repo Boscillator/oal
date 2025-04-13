@@ -57,6 +57,7 @@ set(sources
 
 set(python_sources
   src/python/core.cpp
+  src/python/units.cpp
 )
 
 if(OAL_PYTHON)
