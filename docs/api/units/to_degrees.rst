@@ -5,6 +5,7 @@
 
 :namespace: ``oal::units``
 :header: ``oal/units.hpp``
+:brief: Convert an angle to degrees.
 
 .. cpp:namespace-push:: oal::units
 
@@ -59,4 +60,4 @@ Examples
 
 See Also
 --------
-:ref:`oal.units.to_radians`
+:ref:`oal.units.to_radians`, :ref:`oal.units.AngleUnit`
