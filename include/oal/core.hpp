@@ -1,0 +1,3 @@
+namespace oal {
+  void hello();
+}

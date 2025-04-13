@@ -1,0 +1,34 @@
+{
+  "version": 9,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 15
+  },
+  "configurePresets": [
+    {
+      "name": "development",
+      "displayName": "Development",
+      "description": "Defaults for building and testing OAL",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "OAL_BUILD_TESTS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "development",
+      "configurePreset": "development"
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "development",
+      "steps": [
+        {"type": "configure", "name": "development"},
+        {"type": "build", "name": "development"}
+      ]
+    }
+  ]
+}
