@@ -8,11 +8,11 @@ class oalRecipe(ConanFile):
     package_type = "library"
 
     # Optional metadata
-    license = "<Put the package license here>"
-    author = "<Put your name here> <And your email here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of oal package here>"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
+    license = " MPL-2.0"
+    author = "Frederick Buchanan <fred@buchanan.one>"
+    url = "https://github.com/Boscillator/oal"
+    description = "Open Aerospace Utilities. Unopinionated, open source and correct utilities for aerospace applications. Supports C++ and Python."
+    topics = ("Aerospace", "Python")
 
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
