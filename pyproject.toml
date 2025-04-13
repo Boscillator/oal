@@ -14,7 +14,11 @@ cmake.define = { "OAL_PYTHON" = "ON" }
 
 [dependency-groups]
 dev = [
+    "furo>=2024.8.6",
     "hypothesis>=6.131.0",
     "pytest>=8.3.5",
     "scikit-build-core>=0.11.1",
+    "sphinx>=8.2.3",
+    "sphinx-press-theme>=0.9.1",
+    "sphinx-tabs>=3.4.7",
 ]
