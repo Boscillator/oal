@@ -22,12 +22,21 @@
       "configurePreset": "development"
     }
   ],
+  "testPresets": [
+    {
+      "name": "development",
+      "configurePreset": "development",
+      "output": {"outputOnFailure": true},
+      "execution": {"noTestsAction": "error", "stopOnFailure": true}
+    }
+  ],
   "workflowPresets": [
     {
       "name": "development",
       "steps": [
         {"type": "configure", "name": "development"},
-        {"type": "build", "name": "development"}
+        {"type": "build", "name": "development"},
+        {"type": "test", "name": "development"}
       ]
     }
   ]
