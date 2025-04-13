@@ -1,3 +1,5 @@
+.. _oal.units.to_degrees:
+
 ``oal.units.to_degrees``
 ==================================
 
@@ -54,3 +56,7 @@ Examples
       # works as a no-op if units is radians
       >>> oal.units.to_degrees(180, oal.units.DEGREES)
       180.0
+
+See Also
+--------
+:ref:`oal.units.to_radians`

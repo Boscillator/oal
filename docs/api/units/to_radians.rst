@@ -1,3 +1,5 @@
+.. _oal.units.to_radians:
+
 ``oal.units.to_radians``
 ==================================
 
@@ -54,3 +56,7 @@ Examples
       # works as a no-op if units is radians
       >>> oal.units.to_radians(np.pi, oal.units.RADIANS)
       3.141592653589793
+
+See Also
+--------
+:ref:`oal.units.to_degrees`
