@@ -64,3 +64,9 @@ set_target_properties(oal PROPERTIES
   SOVERSION "${PROJECT_MAJOR_VERSION}"
   VERSION "${PROJECT_VERSION}"
 )
+
+# Testing
+if(OAL_BUILD_TESTS)
+  include(${CMAKE_CURRENT_LIST_DIR}/cmake/testing.cmake)
+  add_subdirectory(tests/cpp)
+endif()

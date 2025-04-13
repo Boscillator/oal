@@ -1,0 +1,1 @@
+oal_add_test(NAME core SOURCE_FILES test_core.cpp)
