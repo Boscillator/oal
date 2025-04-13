@@ -16,6 +16,10 @@ Open Aerospace Library. Unopinionated, open source, and correct utilities for ae
   useable between a trade study script and flight code.
 
 ## Non-Goals
+- **Being a monte-carlo framework:** O.A.L. will never contain code that
+  requires a certain structure for your codebase, and instead provides
+  utility routines that can be used a-la-cart with your existing
+  monte-carlo or <abbr title="Operational Flight Software">OFS</abbr> framework.
 - **DO-178B Certification:** This software is not ready for use in
   safety-of-life critical applications. Perhaps this will become a goal in the
   future.
