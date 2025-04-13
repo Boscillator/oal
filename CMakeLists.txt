@@ -37,11 +37,13 @@ generate_export_header(oal EXPORT_FILE_NAME "include/oal/${export_file_name}")
 # === Sources ===
 set(public_headers
   include/oal/core.hpp
+  include/oal/units.hpp
 )
 
 set(sources
   ${public_headers}
   src/core.cpp
+  src/units.cpp
 )
 
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${sources})
