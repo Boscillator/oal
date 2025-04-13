@@ -47,7 +47,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Install dependencies
-      run: >
+      run: |
         sudo apt update
         sudo apt install pybind11 eigen3
     - name: CMake Configure
