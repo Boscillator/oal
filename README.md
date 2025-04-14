@@ -1,5 +1,9 @@
 # O.A.L.
+![Unit Tests](https://github.com/boscillator/oal/actions/workflows/build-and-test.yml/badge.svghttps://github.com/boscillator/oal/actions/workflows/build-and-test.yml/badge.svg)
+
 Open Aerospace Library. Unopinionated, open source, and correct utilities for aerospace applications.
+
+**Documentation:** https://boscillator.github.io/oal/
 
 > **THIS SOFTWARE IS CURRENTLY IN ALPHA.** If you plan on using it, please
 > contact me so I can begin stabilizing the API. The software is provided
