@@ -12,8 +12,7 @@ void register_units(py::module_& m) {
   py::enum_<oal::units::AngleUnit>(units, "AngleUnit")
     .value("RADIANS", oal::units::RADIANS)
     .value("DEGREES", oal::units::DEGREES)
-    .export_values()
-    .doc() = "Unit of measure representing an angle.";
+    .export_values();
 
   double (*to_degrees)(const double, const oal::units::AngleUnit) = &oal::units::to_degrees;  // Specify overload resolution
   units.def("to_degrees", py::vectorize(to_degrees), "Convert an angle to radians", py::arg("angle"), py::arg("units") = units::RADIANS);
