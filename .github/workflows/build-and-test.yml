@@ -84,7 +84,7 @@ jobs:
     - name: Build Docs
       run: |
         cd docs
-        uv run make html
+        uv run --no-sync make html
     - uses: actions/upload-pages-artifact@v3
       id: pages-deployment
       with:
