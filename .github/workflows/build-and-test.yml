@@ -55,3 +55,20 @@ jobs:
     - name: CMake Test
       run: >
         ctest --preset development
+  build-python:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: astral-sh/setup-uv@v5
+    - name: Install C++ Dependencies
+      run: |
+        sudo apt update
+        sudo apt install pybind11-dev libeigen3-dev
+    - name: Setup python
+      run: uv python install
+    - name: Build
+      run: uv build
+    - name: Pytest
+      run: uv run pytest
+    - name: Doctest
+      run: cd docs && make doctest
