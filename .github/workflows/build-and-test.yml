@@ -71,4 +71,4 @@ jobs:
     - name: Pytest
       run: uv run pytest
     - name: Doctest
-      run: cd docs && make doctest
+      run: cd docs && uv run make doctest
