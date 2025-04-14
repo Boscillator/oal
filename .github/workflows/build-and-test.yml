@@ -55,3 +55,49 @@ jobs:
     - name: CMake Test
       run: >
         ctest --preset development
+  build-python:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: astral-sh/setup-uv@v5
+    - name: Install C++ Dependencies
+      run: |
+        sudo apt update
+        sudo apt install pybind11-dev libeigen3-dev
+    - name: Setup python
+      run: uv python install
+    - name: Build
+      run: uv build
+    - name: Pytest
+      run: uv run pytest
+    - name: Doctest
+      run: cd docs && uv run make doctest
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: astral-sh/setup-uv@v5
+    - name: Setup python
+      run: |
+        uv python install
+        uv sync --no-install-package oal
+    - name: Build Docs
+      run: |
+        cd docs
+        uv run --no-sync make html
+    - uses: actions/upload-pages-artifact@v3
+      id: pages-deployment
+      with:
+        path: docs/_build
+  deploy-docs:
+    runs-on: ubuntu-latest
+    needs: build-docs
+    environment:
+      name: github-pages
+      url: ${{ steps.pages-deployment.outputs.page_url }}
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    steps:
+    - uses: actions/deploy-pages@v4
+      id: pages-deployment
