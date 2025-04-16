@@ -4,6 +4,19 @@ include(Catch)
 
 enable_testing()
 
+if(OAL_PYTHON)
+  find_package(Pytest REQUIRED)
+  pytest_discover_tests(
+    PythonTests
+    LIBRARY_PATH_PREPEND
+        $<TARGET_FILE_DIR:oal>
+    PYTHON_PATH_PREPEND
+        $<TARGET_FILE_DIR:oal>
+    TRIM_FROM_NAME "^test_"
+    DEPENDS oal
+  )
+endif()
+
 function(oal_add_test)
   set(one_value_args NAME)
   set(multi_value_args SOURCE_FILES)
