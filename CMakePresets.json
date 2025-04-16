@@ -22,7 +22,8 @@
       "displayName": "CI",
       "inherits": "development",
       "cacheVariables": {
-        "CMAKE_CXX_CLANG_TIDY": "clang-tidy"
+        "CMAKE_CXX_CLANG_TIDY": "clang-tidy",
+        "OAL_SANATIZE": "ON"
       }
     }
   ],
@@ -33,7 +34,6 @@
     },
     {
       "name": "ci",
-      "inherits": "development",
       "configurePreset": "ci"
     }
   ],
@@ -43,6 +43,11 @@
       "configurePreset": "development",
       "output": {"outputOnFailure": true},
       "execution": {"noTestsAction": "error", "stopOnFailure": true}
+    },
+    {
+      "name": "ci",
+      "inherits": "development",
+      "configurePreset": "ci"
     }
   ],
   "workflowPresets": [
@@ -52,6 +57,14 @@
         {"type": "configure", "name": "development"},
         {"type": "build", "name": "development"},
         {"type": "test", "name": "development"}
+      ]
+    },
+    {
+      "name": "ci",
+      "steps": [
+        {"type": "configure", "name": "ci"},
+        {"type": "build", "name": "ci"},
+        {"type": "test", "name": "ci"}
       ]
     }
   ]

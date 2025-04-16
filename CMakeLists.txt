@@ -14,6 +14,7 @@ project(oal
 option(OAL_BUILD_TESTS "Build tests for OAL" OFF)
 option(OAL_PYTHON "Build python bindings" OFF)
 option(OAL_BUILD_SYMBOL_VISIBILITY_HIDDEN "Hide symbols by default when building shared libraries. You probably shouldn't turn this off." ON)
+option(OAL_SANITIZE "Enable sanitizers" OFF)
 
 mark_as_advanced(OAL_BUILD_SYMBOL_VISIBILITY_HIDDEN)
 
@@ -42,6 +43,11 @@ include(GenerateExportHeader)
 set(export_file_name "export.h")
 generate_export_header(oal EXPORT_FILE_NAME "include/oal/${export_file_name}")
 
+# === Sanitizers ===
+if(OAL_SANATIZE)
+  set(CMAKE_CXX_FLAGS_DEBUG -fsanitize=address)
+  set(CMAKE_LINKER_FLAGS_DEBUG -fsanitize=address)
+endif()
 
 # === Sources ===
 set(public_headers
