@@ -37,6 +37,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: astral-sh/setup-uv@v5
     - name: Install dependencies
       run: |
         sudo apt update
@@ -45,33 +46,16 @@ jobs:
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: >
-        cmake --preset ci
+        uv cmake --preset ci
         -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
     - name: CMake Build
       run: >
-        cmake --build --preset ci
+        uv cmake --build --preset ci
     - name: CMake Test
       run: >
-        ctest --preset ci
-  build-python:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v4
-    - uses: astral-sh/setup-uv@v5
-    - name: Install C++ Dependencies
-      run: |
-        sudo apt update
-        sudo apt install pybind11-dev libeigen3-dev
-    - name: Setup python
-      run: uv python install
-    - name: Build
-      run: uv build
-    - name: Pytest
-      run: uv run pytest
-    - name: Doctest
-      run: cd docs && uv run make doctest
+        uv ctest --preset ci
   build-docs:
     runs-on: ubuntu-latest
     steps:
