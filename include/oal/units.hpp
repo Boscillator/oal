@@ -36,7 +36,7 @@ OAL_EXPORT double to_degrees(const double angle_radians);
 // @return Angle in degrees.
 OAL_EXPORT double to_degrees(const double angle, const AngleUnit units);
 
-}
-}
+}  // namespace units
+}  // namespace oal
 
 #endif

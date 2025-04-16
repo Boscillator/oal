@@ -8,4 +8,4 @@ namespace python {
 void register_units(py::module_& m);
 
 }
-}
+}  // namespace oal
