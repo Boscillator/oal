@@ -7,8 +7,8 @@
 namespace oal {
 namespace python {
 
-void register_units(py::module_& m) {
-  auto units = m.def_submodule("units", "Units module");
+void register_units(py::module_& oal) {
+  auto units = oal.def_submodule("units", "Units module");
 
   py::enum_<oal::units::AngleUnit>(units, "AngleUnit")
       .value("RADIANS", oal::units::RADIANS)

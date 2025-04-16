@@ -5,7 +5,7 @@ namespace py = pybind11;
 namespace oal {
 namespace python {
 
-void register_units(py::module_& m);
+void register_units(py::module_& oal);
 
 }
 }  // namespace oal

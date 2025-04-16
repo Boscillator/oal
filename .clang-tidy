@@ -3,4 +3,6 @@ Checks:
   - -*
   - bugprone-*
   - readability-*
+  - -readability-magic-numbers # magic numbers can be valuable in unit tests
   - google-*
+  - -google-build-using-namespace # using namespace is valuable in unit test and can be checked for manually in library code

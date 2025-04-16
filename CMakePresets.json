@@ -13,7 +13,16 @@
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
         "OAL_BUILD_TESTS": "ON",
-        "OAL_PYTHON": "ON"
+        "OAL_PYTHON": "ON",
+        "CMAKE_CXX_FLAGS": "-Wall -Wextra -Wpedantic -Werror"
+      }
+    },
+    {
+      "name": "ci",
+      "displayName": "CI",
+      "inherits": "development",
+      "cacheVariables": {
+        "CMAKE_CXX_CLANG_TIDY": "clang-tidy"
       }
     }
   ],
@@ -21,6 +30,11 @@
     {
       "name": "development",
       "configurePreset": "development"
+    },
+    {
+      "name": "ci",
+      "inherits": "development",
+      "configurePreset": "ci"
     }
   ],
   "testPresets": [
