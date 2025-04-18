@@ -12,9 +12,10 @@ OAL_EXPORT Mat3 rotate_y(const double angle_rad);
 OAL_EXPORT Mat3 rotate_z(const double angle_rad);
 
 OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers_rad);
-OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers, const units::AngleUnit unit);
+OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
+                                const units::AngleUnit unit);
 
-}
-}
+}  // namespace coords
+}  // namespace oal
 
 #endif

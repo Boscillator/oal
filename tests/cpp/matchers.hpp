@@ -1,7 +1,7 @@
 #include <Eigen/Eigen>
 #include <catch2/matchers/catch_matchers.hpp>
-#include <catch2/matchers/catch_matchers_templated.hpp>
 #include <catch2/matchers/catch_matchers_floating_point.hpp>
+#include <catch2/matchers/catch_matchers_templated.hpp>
 #include <sstream>
 
 namespace oal {
@@ -19,7 +19,7 @@ struct MatrixWithinAbsMatcher : public Catch::Matchers::MatcherGenericBase {
 
     for (int row = 0; row < target_.rows(); row++) {
       for (int col = 0; col < target_.cols(); col++) {
-        if(std::abs(target_(row,col) - other(row,col)) > tolerance_) {
+        if (std::abs(target_(row, col) - other(row, col)) > tolerance_) {
           return false;
         }
       }
@@ -39,8 +39,9 @@ struct MatrixWithinAbsMatcher : public Catch::Matchers::MatcherGenericBase {
   double tolerance_;
 };
 
-template<typename T>
-auto MatrixWithinAbs(const T& target, const double tolerance) -> MatrixWithinAbsMatcher<T> {
+template <typename T>
+auto MatrixWithinAbs(const T& target, const double tolerance)
+    -> MatrixWithinAbsMatcher<T> {
   return MatrixWithinAbsMatcher(target, tolerance);
 }
 

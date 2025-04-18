@@ -4,7 +4,6 @@
 #include <Eigen/Core>
 #include <utility>
 
-
 #include "oal/export.h"
 
 // Unreachable macro from https://en.cppreference.com/w/cpp/utility/unreachable
@@ -17,7 +16,6 @@
 #endif
 namespace oal {
 
-
 #if defined(__cpp_lib_math_constants)
 #include <numbers>
 static constexpr double pi = std::numbers::pi;
@@ -27,10 +25,10 @@ static constexpr double pi = 3.14159265358979323846;
 #endif
 
 #if defined(OAL_PYTHON)
-template<typename T>
+template <typename T>
 using Ref = Eigen::Ref<T, 0, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>>;
 #else
-template<typename T>
+template <typename T>
 using Ref = Eigen::Ref<T>;
 #endif
 
