@@ -53,12 +53,15 @@ endif()
 set(public_headers
   include/oal/core.hpp
   include/oal/units.hpp
+  include/oal/coords.hpp
+  include/oal/coords/rotations.hpp
 )
 
 set(sources
   ${public_headers}
   src/core.cpp
   src/units.cpp
+  src/coords/rotations.cpp
 )
 
 set(python_sources
@@ -97,7 +100,11 @@ set_target_properties(oal PROPERTIES
   VERSION "${PROJECT_VERSION}"
 )
 
-# Testing
+target_compile_definitions(oal PUBLIC
+  "$<$<BOOL:${OAL_PYTHON}>:OAL_PYTHON>"
+)
+
+# === Testing ===
 if(OAL_BUILD_TESTS)
   include(${CMAKE_CURRENT_LIST_DIR}/cmake/testing.cmake)
   add_subdirectory(tests/cpp)
