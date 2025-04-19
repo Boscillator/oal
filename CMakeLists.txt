@@ -67,6 +67,7 @@ set(sources
 set(python_sources
   src/python/core.cpp
   src/python/units.cpp
+  src/python/coords.cpp
 )
 
 if(OAL_PYTHON)
@@ -77,7 +78,6 @@ source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${sources})
 
 list(APPEND public_headers "${CMAKE_CURRENT_BINARY_DIR}/include/oal/${export_file_name}")
 list(APPEND sources "${CMAKE_CURRENT_BINARY_DIR}/include/oal/${export_file_name}")
-
 
 # === Dependencies ===
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
