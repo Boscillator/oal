@@ -9,7 +9,7 @@ TEST_CASE("Test rotate_{axis} family functions", "[coords]") {
     // clockwise
     const oal::Vec3 point = {0, 0, 1};
 
-    const oal::Vec3 new_point = oal::coords::rotate_x(oal::pi / 2) * point;
+    const oal::Vec3 new_point = oal::coords::rotate_x(90, oal::units::DEGREES) * point;
 
     const oal::Vec3 expected_point{0, 1, 0};
     const double tolerance = 1e-12;
@@ -22,7 +22,7 @@ TEST_CASE("Test rotate_{axis} family functions", "[coords]") {
     // Rotate coordinate system by 90 degrees counter clockwise about the y-axis
     const oal::Vec3 point = {0, 0, 1};
 
-    const oal::Vec3 new_point = oal::coords::rotate_y(oal::pi / 2) * point;
+    const oal::Vec3 new_point = oal::coords::rotate_y(90, oal::units::DEGREES) * point;
 
     const oal::Vec3 expected_point{-1, 0, 0};
     const double tolerance = 1e-12;
@@ -36,7 +36,7 @@ TEST_CASE("Test rotate_{axis} family functions", "[coords]") {
     // identity matrix
     const oal::Vec3 point = {0, 0, 1};
 
-    const oal::Vec3 new_point = oal::coords::rotate_z(oal::pi / 2) * point;
+    const oal::Vec3 new_point = oal::coords::rotate_z(90, oal::units::DEGREES) * point;
 
     const oal::Vec3 expected_point{0, 0, 1};
     const double tolerance = 1e-12;

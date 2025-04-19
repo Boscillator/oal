@@ -8,8 +8,11 @@ namespace oal {
 namespace coords {
 
 OAL_EXPORT Mat3 rotate_x(const double angle_rad);
+OAL_EXPORT Mat3 rotate_x(const double angle, const units::AngleUnit units);
 OAL_EXPORT Mat3 rotate_y(const double angle_rad);
+OAL_EXPORT Mat3 rotate_y(const double angle, const units::AngleUnit units);
 OAL_EXPORT Mat3 rotate_z(const double angle_rad);
+OAL_EXPORT Mat3 rotate_z(const double angle, const units::AngleUnit units);
 
 OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers_rad);
 OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
