@@ -11,21 +11,28 @@
   .. group-tab:: C++
     .. cpp:function:: Mat3 rotate_x(const double angle_rad)
       :no-contents-entry:
+    .. cpp:function:: Mat3 rotate_x(const double angle, const oal::units::AngleUnit units)
+      :no-contents-entry:
     .. cpp:function:: Mat3 rotate_y(const double angle_rad)
+      :no-contents-entry:
+    .. cpp:function:: Mat3 rotate_y(const double angle, const oal::units::AngleUnit units)
       :no-contents-entry:
     .. cpp:function:: Mat3 rotate_z(const double angle_rad)
       :no-contents-entry:
+    .. cpp:function:: Mat3 rotate_z(const double angle, const oal::units::AngleUnit units)
+      :no-contents-entry:
   .. group-tab:: Python
-    .. py:function:: rotate_x(angle, )
+    .. py:function:: rotate_x(angle, units=oal.units.RADIANS)
       :no-contents-entry:
-    .. py:function:: rotate_y(angle)
+    .. py:function:: rotate_y(angle, units=oal.units.RADIANS)
       :no-contents-entry:
-    .. py:function:: rotate_z(angle)
+    .. py:function:: rotate_z(angle, units=oal.units.RADIANS)
       :no-contents-entry:
 
 Parameters
 ----------
 :double angle: Angle theta to rotate by. In radians be default.
+:AngleUnit units: Units ``angle`` is in. Defaults to radians.
 
 Details
 -------

@@ -19,4 +19,5 @@ build:
 	cmake --build --preset development
 
 .PHONY: test
+test:
 	cd build && ctest
