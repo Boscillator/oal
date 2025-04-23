@@ -15,7 +15,7 @@ cmake.define = { "OAL_PYTHON" = "ON" }
 [dependency-groups]
 dev = [
     "furo>=2024.8.6",
-    "hypothesis>=6.131.0",
+    "hypothesis[numpy]>=6.131.0",
     "pytest>=8.3.5",
     "pytest-cmake>=0.13.0",
     "scikit-build-core>=0.11.1",
