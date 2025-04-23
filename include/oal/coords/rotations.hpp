@@ -40,7 +40,7 @@ OAL_EXPORT Mat3 rotate_z(const double angle_rad);
 /// @return DCM. See `Coordinate Systems` manual page for conventions.
 OAL_EXPORT Mat3 rotate_z(const double angle, const units::AngleUnit units);
 
-/// @brief Order in which euler angles rotations are applied.
+/// @brief Order in which euler angle rotations are applied.
 enum class RotationSequence {
   INTRINSIC_ZYX = 0,
   INTRINSIC_XZY = 1,

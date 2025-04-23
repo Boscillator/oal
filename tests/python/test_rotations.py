@@ -27,9 +27,10 @@ def test_rotation_about_an_axis_does_not_change_a_point_on_that_axis(angle, axis
     st.floats(allow_nan=False, allow_infinity=False),
     sample_from_enum(units.AngleUnit),
     sample_from_enum(coords.RotationSequence))
-def test_rotation_matrix_is_orthogonal(a,b,c, unit, sequence):
+def test_dcm_from_euler_is_orthogonal(a,b,c, unit, sequence):
   eulers = np.array([a,b,c])
   R = coords.dcm_from_eulers(eulers, units=unit, sequence=sequence)
 
   # Orthogonality implies A^T == A^-1, and A^-1 @ A == I
   assert np.allclose(R.T @ R, np.eye(3))
+
