@@ -1,1 +1,2 @@
 oal_add_test(NAME single_axis_rotations SOURCE_FILES test_single_axis_rotations.cpp)
+oal_add_test(NAME dcm_from_euler SOURCE_FILES test_dcm_from_euler.cpp)

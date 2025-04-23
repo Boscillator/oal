@@ -18,3 +18,5 @@ def test_rotation_about_an_axis_does_not_change_a_point_on_that_axis(angle, axis
   rotate, point = axis
   A = rotate(angle)
   assert A @ point == pytest.approx(point, rel=1e-5)
+
+

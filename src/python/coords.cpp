@@ -39,7 +39,8 @@ void register_coords(py::module_& oal) {
       .value("EXTRINSIC_YXZ", coords::RotationSequence::EXTRINSIC_YXZ)
       .value("EXTRINSIC_YZX", coords::RotationSequence::EXTRINSIC_YZX)
       .value("EXTRINSIC_XYZ", coords::RotationSequence::EXTRINSIC_XYZ)
-      .value("EXTRINSIC_ZXY", coords::RotationSequence::EXTRINSIC_ZXY);
+      .value("EXTRINSIC_ZXY", coords::RotationSequence::EXTRINSIC_ZXY)
+      .value("YPR", coords::RotationSequence::YPR);
 
   Mat3 (*dcm_from_eulers)(const Vec3Ref, const units::AngleUnit, const coords::RotationSequence) = &coords::dcm_from_eulers;
   coords.def("dcm_from_eulers", dcm_from_eulers, "Compute a DCM from euler angles", py::arg("eulers"), py::arg("units") = units::RADIANS, py::arg("sequence") = coords::RotationSequence::INTRINSIC_ZYX);
