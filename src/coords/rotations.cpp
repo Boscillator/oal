@@ -36,5 +36,86 @@ OAL_EXPORT Mat3 rotate_z(const double angle, const units::AngleUnit units) {
   return rotate_z(units::to_radians(angle, units));
 }
 
+OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers_rad) {
+  return rotate_x(eulers_rad[0]) * rotate_y(eulers_rad[1]) *
+         rotate_z(eulers_rad[2]);
+}
+
+OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
+                                const units::AngleUnit unit) {
+  Vec3 eulers_rad = eulers * units::to_radians(1, unit);
+  return dcm_from_eulers(eulers_rad);
+}
+
+OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers_rad,
+                                const RotationSequence sequence) {
+  switch (sequence) {
+    case RotationSequence::INTRINSIC_ZYX:
+      return rotate_x(eulers_rad[0]) * rotate_y(eulers_rad[1]) *
+             rotate_z(eulers_rad[2]);
+    case RotationSequence::INTRINSIC_XZY:
+      return rotate_x(eulers_rad[0]) * rotate_z(eulers_rad[1]) *
+             rotate_y(eulers_rad[2]);
+    case RotationSequence::INTRINSIC_YXZ:
+      return rotate_y(eulers_rad[0]) * rotate_x(eulers_rad[1]) *
+             rotate_z(eulers_rad[2]);
+    case RotationSequence::INTRINSIC_YZX:
+      return rotate_y(eulers_rad[0]) * rotate_z(eulers_rad[1]) *
+             rotate_x(eulers_rad[2]);
+    case RotationSequence::INTRINSIC_XYZ:
+      return rotate_x(eulers_rad[0]) * rotate_y(eulers_rad[1]) *
+             rotate_z(eulers_rad[2]);
+    case RotationSequence::INTRINSIC_ZXY:
+      return rotate_z(eulers_rad[0]) * rotate_x(eulers_rad[1]) *
+             rotate_y(eulers_rad[2]);
+    case RotationSequence::PROPER_XZX:
+      return rotate_x(eulers_rad[0]) * rotate_z(eulers_rad[1]) *
+             rotate_x(eulers_rad[2]);
+    case RotationSequence::PROPER_XYX:
+      return rotate_x(eulers_rad[0]) * rotate_y(eulers_rad[1]) *
+             rotate_x(eulers_rad[2]);
+    case RotationSequence::PROPER_YXY:
+      return rotate_y(eulers_rad[0]) * rotate_x(eulers_rad[1]) *
+             rotate_y(eulers_rad[2]);
+    case RotationSequence::PROPER_YZY:
+      return rotate_y(eulers_rad[0]) * rotate_z(eulers_rad[1]) *
+             rotate_y(eulers_rad[2]);
+    case RotationSequence::PROPER_ZYZ:
+      return rotate_z(eulers_rad[0]) * rotate_y(eulers_rad[1]) *
+             rotate_z(eulers_rad[2]);
+    case RotationSequence::PROPER_ZXZ:
+      return rotate_z(eulers_rad[0]) * rotate_x(eulers_rad[1]) *
+             rotate_z(eulers_rad[2]);
+    default:
+      OAL_UNREACHABLE;
+  }
+}
+
+OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
+                                const units::AngleUnit unit,
+                                const RotationSequence sequence) {
+  const Vec3 eulers_rad = eulers * units::to_radians(1, unit);
+  return dcm_from_eulers(eulers_rad, sequence);
+}
+
+OAL_EXPORT Mat3 dcm_from_eulers(const double yaw,
+                                const double pitch,
+                                const double roll) {
+  const Vec3 eulers = {yaw, pitch, roll};
+
+  // Defaults to intrinsic ZYX, radians
+  return dcm_from_eulers(eulers);
+}
+
+OAL_EXPORT Mat3 dcm_from_eulers(const double yaw,
+                                const double pitch,
+                                const double roll,
+                                const units::AngleUnit unit) {
+  const Vec3 eulers = {yaw, pitch, roll};
+
+  // Defaults to intrinsic ZYX
+  return dcm_from_eulers(eulers, unit);
+}
+
 }  // namespace coords
 }  // namespace oal

@@ -33,7 +33,7 @@ using Ref = Eigen::Ref<T>;
 #endif
 
 using Vec3 = Eigen::Vector3d;
-using Vec3Ref = Ref<Vec3>;
+using Vec3Ref = Ref<const Vec3>;
 using Mat3 = Eigen::Matrix3d;
 
 OAL_EXPORT void hello();
