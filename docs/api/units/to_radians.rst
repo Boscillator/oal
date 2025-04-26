@@ -1,6 +1,6 @@
 .. _oal.units.to_radians:
 
-``oal.units.to_radians``
+``to_radians``
 ==================================
 
 :namespace: ``oal::units``

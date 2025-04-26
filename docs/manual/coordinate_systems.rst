@@ -5,6 +5,7 @@ Rotations
 ---------
 
 .. _active_vs_passive_rotations:
+
 Active vs Passive Rotations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A rotation can either represent the rotation of a point in a fixed coordinate system (known an active rotation) or

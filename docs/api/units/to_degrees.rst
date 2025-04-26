@@ -1,6 +1,6 @@
 .. _oal.units.to_degrees:
 
-``oal.units.to_degrees``
+``to_degrees``
 ==================================
 
 :namespace: ``oal::units``

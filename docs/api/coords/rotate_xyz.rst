@@ -1,4 +1,4 @@
-``oal.coords.rotate_[xyz]``
+``rotate_[xyz]``
 ===========================
 
 :namespace: ``oal::coords``

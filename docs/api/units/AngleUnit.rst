@@ -1,6 +1,6 @@
 .. _oal.units.AngleUnit:
 
-``oal.units.AngleUnit``
+``AngleUnit``
 =======================
 
 :namespace: ``oal::units``

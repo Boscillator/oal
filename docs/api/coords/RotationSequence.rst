@@ -1,4 +1,4 @@
-``oal.coords.RotationSequence``
+``RotationSequence``
 ===============================
 
 :namespace: ``oal::coords``
