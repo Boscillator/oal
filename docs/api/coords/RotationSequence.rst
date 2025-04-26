@@ -1,3 +1,5 @@
+.. _oal.coords.RotationSequence:
+
 ``RotationSequence``
 ===============================
 
@@ -105,7 +107,7 @@ follows:
 .. math::
   R(\theta, \phi, \psi) = R_x(\psi) R_y(\phi) R_z(\theta)
 
-where :math:`R_{\text{axis}}` is a rotation purely about the given axis.
+where :math:`R_{\text{axis}}` is a rotation purely about the given axis. See :ref:`oal.coords.rotate_xyz` for the implementation of the pure axis rotation matrices.
 
 Proper sequences use the same axis for the first and last rotation.
 

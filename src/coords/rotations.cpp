@@ -42,8 +42,8 @@ OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers_rad) {
 }
 
 OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
-                                const units::AngleUnit unit) {
-  Vec3 eulers_rad = eulers * units::to_radians(1, unit);
+                                const units::AngleUnit units) {
+  Vec3 eulers_rad = eulers * units::to_radians(1, units);
   return dcm_from_eulers(eulers_rad);
 }
 
@@ -92,9 +92,9 @@ OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers_rad,
 }
 
 OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
-                                const units::AngleUnit unit,
+                                const units::AngleUnit units,
                                 const RotationSequence sequence) {
-  const Vec3 eulers_rad = eulers * units::to_radians(1, unit);
+  const Vec3 eulers_rad = eulers * units::to_radians(1, units);
   return dcm_from_eulers(eulers_rad, sequence);
 }
 
@@ -110,11 +110,11 @@ OAL_EXPORT Mat3 dcm_from_eulers(const double yaw,
 OAL_EXPORT Mat3 dcm_from_eulers(const double yaw,
                                 const double pitch,
                                 const double roll,
-                                const units::AngleUnit unit) {
+                                const units::AngleUnit units) {
   const Vec3 eulers = {yaw, pitch, roll};
 
   // Defaults to intrinsic ZYX
-  return dcm_from_eulers(eulers, unit);
+  return dcm_from_eulers(eulers, units);
 }
 
 }  // namespace coords

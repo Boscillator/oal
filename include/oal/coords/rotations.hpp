@@ -70,10 +70,10 @@ OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers_rad);
 
 /// @brief Compute a DCM from euler angles.
 /// @param eulers Intrinsic ZYX euler angles.
-/// @param unit  Units `eulers` is in
+/// @param units  Units `eulers` is in
 /// @return DCM. See `Coordinate Systems` manual page for conventions.
 OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
-                                const units::AngleUnit unit);
+                                const units::AngleUnit units);
 
 /// @brief Compute a DCM from euler angles.
 /// @param eulers_rad Euler angles in radians.
@@ -84,15 +84,15 @@ OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers_rad,
 
 /// @brief Compute a DCM from euler angles.
 /// @param eulers Euler angles.
-/// @param unit  Units `eulers` is in.
+/// @param units  Units `eulers` is in.
 /// @param sequence Rotation sequence euler angles are defined in.
 /// @return DCM. See `Coordinate Systems` manual page for conventions.
 OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
-                                const units::AngleUnit unit,
+                                const units::AngleUnit units,
                                 const RotationSequence sequence);
 
-OAL_EXPORT Mat3 dcm_from_eulers(const double yaw, const double pitch, const double roll);
-OAL_EXPORT Mat3 dcm_from_eulers(const double yaw, const double pitch, const double roll, const units::AngleUnit unit);
+OAL_EXPORT Mat3 dcm_from_eulers(const double yaw_rad, const double pitch_rad, const double roll_rad);
+OAL_EXPORT Mat3 dcm_from_eulers(const double yaw, const double pitch, const double roll, const units::AngleUnit units);
 
 }  // namespace coords
 }  // namespace oal

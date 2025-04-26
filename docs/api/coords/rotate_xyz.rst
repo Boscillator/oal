@@ -1,3 +1,5 @@
+.. _oal.coords.rotate_xyz:
+
 ``rotate_[xyz]``
 ===========================
 
@@ -31,7 +33,7 @@
 
 Parameters
 ----------
-:double angle: Angle theta to rotate by. In radians be default.
+:double angle: Angle theta to rotate by. In radians by default.
 :AngleUnit units: Units ``angle`` is in. Defaults to radians.
 
 Details
