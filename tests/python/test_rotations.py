@@ -107,8 +107,7 @@ def test__dcm_to_euler__rotation_about_an_axis_moves_point_in_correct_direction(
     rotation_axis_index, point_axis, angle_deg, sequence
 ):
     """
-    When all other dimensions are zeroed out, check that a clockwise rotation (-theta) of the coordinate system produces a positive change in a points coordinates,
-    and a counter-clockwise rotation (+theta) produces a negative change.
+    Check that rotation about axis A moves a point along axis B in the expected direction along axis C.
     """
 
     # We are not interested in zero rotation
@@ -146,6 +145,7 @@ def test__dcm_to_euler__rotation_about_an_axis_moves_point_in_correct_direction(
     note(f"New point: {new_point}")
 
     # Compute the expected sign of the point's coordinate along the measurement axis
+    # Derived manually by the right hand rule
     expected_sign_table = {
         (0, 1): -1,
         (0, 2): 1,
