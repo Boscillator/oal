@@ -48,7 +48,7 @@
         :no-contents-entry:
       .. cpp:enumerator:: EXTRINSIC_ZXY
         :no-contents-entry:
-      .. cpp:enumerator:: YPR
+      .. cpp:enumerator:: YAW_PITCH_ROLL
         :no-contents-entry:
 
   .. group-tab:: Python
@@ -91,7 +91,7 @@
         :no-contents-entry:
       .. py:attribute:: EXTRINSIC_ZXY
         :no-contents-entry:
-      .. py:attribute:: YPR
+      .. py:attribute:: YAW_PITCH_ROLL
         :no-contents-entry:
 
 
@@ -112,4 +112,4 @@ Proper sequences use the same axis for the first and last rotation.
 Extrinsic sequences are notated in order the rotation occurs, and are
 aliases of the inverse sequence of intrinsic rotations.
 
-:cpp:enumerator:`RotationSequence::YPR` is an alias for `RotationSequence::INTRINSIC_ZYX`.
+:cpp:enumerator:`RotationSequence::YAW_PITCH_ROLL` is an alias for :cpp:enumerator:`RotationSequence::INTRINSIC_ZYX`.

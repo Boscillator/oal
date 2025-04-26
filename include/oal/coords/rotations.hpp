@@ -60,7 +60,7 @@ enum class RotationSequence {
   EXTRINSIC_YZX = INTRINSIC_YZX,
   EXTRINSIC_XYZ = INTRINSIC_ZYX,
   EXTRINSIC_ZXY = INTRINSIC_ZXY,
-  YPR = INTRINSIC_ZYX
+  YAW_PITCH_ROLL = INTRINSIC_ZYX
 };
 
 /// @brief Compute a DCM from euler angles.
