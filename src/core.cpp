@@ -3,5 +3,4 @@
 #include <iostream>
 
 namespace oal {
-void hello() { std::cout << "Hello world" << std::endl; }
 }  // namespace oal

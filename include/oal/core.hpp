@@ -35,8 +35,6 @@ using Ref = Eigen::Ref<T>;
 using Vec3 = Eigen::Vector3d;
 using Vec3Ref = Ref<const Vec3>;
 using Mat3 = Eigen::Matrix3d;
-
-OAL_EXPORT void hello();
 }  // namespace oal
 
 #endif

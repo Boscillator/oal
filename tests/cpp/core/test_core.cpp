@@ -2,7 +2,6 @@
 
 #include "oal/core.hpp"
 
-TEST_CASE("Sanity Check", "") {
-  oal::hello();
+TEST_CASE("Sanity Check", "[core]") {
   REQUIRE(true);
 }
