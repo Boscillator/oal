@@ -5,5 +5,5 @@
   :maxdepth: 1
 
   AngleUnit 
-  to_radians
   to_degrees
+  to_radians

@@ -53,3 +53,5 @@ Details
 -------
 .. note::
   The DCM produced uses the premultiplied, passive notation convention. See :ref:`active_vs_passive_rotations` for more details.
+
+
