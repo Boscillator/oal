@@ -15,7 +15,9 @@
         "OAL_BUILD_TESTS": "ON",
         "OAL_PYTHON": "ON",
         "CMAKE_CXX_FLAGS": "-Wall",
-        "CMAKE_CXX_CLANG_TIDY": ""
+        "CMAKE_CXX_CLANG_TIDY": "",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "OAL_SANATIZE": "OFF"
       }
     },
     {
