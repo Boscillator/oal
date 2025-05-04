@@ -23,11 +23,11 @@ void register_coords(py::module_& oal) {
 
   py::enum_<coords::RotationSequence>(coords, "RotationSequence")
       .value("INTRINSIC_ZYX", coords::RotationSequence::INTRINSIC_ZYX)
-      .value("INTRINSIC_XZY", coords::RotationSequence::INTRINSIC_XZY)
+      .value("INTRINSIC_ZXY", coords::RotationSequence::INTRINSIC_ZXY)
       .value("INTRINSIC_YXZ", coords::RotationSequence::INTRINSIC_YXZ)
       .value("INTRINSIC_YZX", coords::RotationSequence::INTRINSIC_YZX)
       .value("INTRINSIC_XYZ", coords::RotationSequence::INTRINSIC_XYZ)
-      .value("INTRINSIC_ZXY", coords::RotationSequence::INTRINSIC_ZXY)
+      .value("INTRINSIC_XZY", coords::RotationSequence::INTRINSIC_XZY)
       .value("PROPER_XZX", coords::RotationSequence::PROPER_XZX)
       .value("PROPER_XYX", coords::RotationSequence::PROPER_XYX)
       .value("PROPER_YXY", coords::RotationSequence::PROPER_YXY)
@@ -35,11 +35,11 @@ void register_coords(py::module_& oal) {
       .value("PROPER_ZYZ", coords::RotationSequence::PROPER_ZYZ)
       .value("PROPER_ZXZ", coords::RotationSequence::PROPER_ZXZ)
       .value("EXTRINSIC_ZYX", coords::RotationSequence::EXTRINSIC_ZYX)
-      .value("EXTRINSIC_XZY", coords::RotationSequence::EXTRINSIC_XZY)
+      .value("EXTRINSIC_ZXY", coords::RotationSequence::EXTRINSIC_ZXY)
       .value("EXTRINSIC_YXZ", coords::RotationSequence::EXTRINSIC_YXZ)
       .value("EXTRINSIC_YZX", coords::RotationSequence::EXTRINSIC_YZX)
       .value("EXTRINSIC_XYZ", coords::RotationSequence::EXTRINSIC_XYZ)
-      .value("EXTRINSIC_ZXY", coords::RotationSequence::EXTRINSIC_ZXY)
+      .value("EXTRINSIC_XZY", coords::RotationSequence::EXTRINSIC_XZY)
       .value("YAW_PITCH_ROLL", coords::RotationSequence::YAW_PITCH_ROLL);
 
   Mat3 (*dcm_from_eulers)(const Vec3Ref, const units::AngleUnit, const coords::RotationSequence) = &coords::dcm_from_eulers;

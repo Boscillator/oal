@@ -101,10 +101,10 @@ OAL_EXPORT Mat3 dcm_from_eulers(const Vec3Ref eulers,
 OAL_EXPORT Mat3 dcm_from_eulers(const double yaw,
                                 const double pitch,
                                 const double roll) {
-  const Vec3 eulers = {yaw, pitch, roll};
+  const Vec3 eulers_rad = {yaw, pitch, roll};
 
   // Defaults to intrinsic ZYX, radians
-  return dcm_from_eulers(eulers);
+  return dcm_from_eulers(eulers_rad);
 }
 
 OAL_EXPORT Mat3 dcm_from_eulers(const double yaw,
