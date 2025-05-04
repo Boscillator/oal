@@ -1,6 +1,8 @@
 Coordinate Systems
 ==================
 
+All measurements exist in reference to some coordinate system.
+
 Rotations
 ---------
 

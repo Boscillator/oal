@@ -12,7 +12,7 @@ Unopinionated, open source, and correct utilities for aerospace applications.
 Table of Contents
 -----------------
 .. toctree::
-  :maxdepth: 1
+  :maxdepth: 2
 
   manual/index.rst
   api/index.rst
